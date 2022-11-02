@@ -28,31 +28,75 @@ public class Hero {
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
     }
 
-    /*アクセサ */
+    /**
+     * ヒーローの名前を返すゲッター。
+     * @return ヒーローの名前
+    */
     public String getName() {
         return this.name;
     }
+
+    /**
+     * ヒーローの名前を設定するセッター。
+     * ヒーロー名にnullは設定できない。
+     * @param name 設定する名前
+    */
     public void setName(String name) {
-        this.name = name;
+        if(name!= null) {
+            this.name = name;
+        }
     }
 
+    /**
+     * ヒーローのヒットポイントを返すゲッター。
+     * @return ヒーローのヒットポイント
+    */
     public int getHitPoint() {
         return this.hitPoint;
     }
+
+    /**
+     * ヒーローのヒットポイントを設定するセッター。
+     * 負の値を設定することはできない。
+     * @param hitPoint 設定するヒットポイント値
+    */
     public void setHitPoint(int hitPoint) {
-        this.hitPoint = hitPoint;
+        if(hitPoint >= 0) {
+            this.hitPoint = hitPoint;
+        } 
     }
 
+    /**
+     * ヒーローの攻撃力を返すゲッター。
+     * @return ヒーローの攻撃力
+    */
     public int getAttack() {
         return this.attack;
     }
+
+    /**
+     * ヒーローの攻撃力を設定するセッター。
+     * 攻撃力に0以下の値を設定することはできない。
+     * @param attack 設定する攻撃力の値
+    */
     public void setAttack(int attack) {
-        this.attack = attack;
+        if(attack > 0) {
+            this.attack = attack;
+        }
     }
 
+    /**
+     * ヒーローの生死状態を返すゲッター。
+     * @return ヒーローの生死状態
+    */
     public boolean getDead() {
         return this.dead;
     }
+
+    /**
+     * ヒーローの生死状態を設定するセッター。
+     * @param dead 設定する生死状態
+    */
     public void setDead(boolean dead) {
         this.dead = dead;
     }
